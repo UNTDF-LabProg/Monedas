@@ -28,7 +28,7 @@ class BootStrap
                   password: "1234567",
                   dni: 38087818,
                   email: 'kukagres07@hotmail.com'
-            ).addToMonedas(new Moneda(siglas:'ARS',valorActual:8.20))).save()
+            )).save()
     }
     
     def destroy = {

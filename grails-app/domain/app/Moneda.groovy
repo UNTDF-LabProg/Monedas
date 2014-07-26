@@ -8,7 +8,7 @@ class Moneda
     static constraints = 
     {
         siglas(blank:false)
-        valorActual(blank:false)
+        valorActual(blank:false, scale:2)
     } 
     static belongsTo=[usuario:Usuario]        
 }

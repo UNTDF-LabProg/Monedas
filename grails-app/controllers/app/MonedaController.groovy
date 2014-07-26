@@ -6,10 +6,9 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class MonedaController 
 {
+    static allowedMethods = [save: "POST", update: "PUT", delete: "POST"]
     def monedasService
-
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-
+    
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Moneda.list(params), model:[monedaInstanceCount: Moneda.count()]
@@ -18,16 +17,26 @@ class MonedaController
     def show(Moneda monedaInstance) {
         respond monedaInstance
     }
+    
+    def agregar()
+    {
+        if (session.user)
+        {
+            def pepito=Usuario.findWhere(email:session.user)
+            pepito.addToMonedas(new Moneda(siglas:params.moneda, valorActual:monedasService.getCurrency(params.moneda))).save(flush:true)
+            pepito.addToRegistros(new Registro(cambio:monedasService.getCurrency(params.moneda),siglas:params.moneda,fechaActualizacion:new Date())).save(flush:true)
+            redirect(controller:"Usuario", action:"show")   
+        }
+        else
+        {
+            //redirect to login?
+        }
+    }
 
     def create() {
         respond new Moneda(params)
     }
-    /*
-    def AgregarMOneda(Moneda monedaInstance,Usuario usuarioInstance){
-               
-        Usuario.addToMonedas(new Moneda(siglas:'ARS',valorActual:8.20)).save()
-    }
-    */
+
     @Transactional
     def save(Moneda monedaInstance) {
         if (monedaInstance == null) {

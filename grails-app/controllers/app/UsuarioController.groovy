@@ -38,6 +38,7 @@ class UsuarioController
                     }
                 }                                 
                 //Dependiendo si es administrador o no, elige el layout
+                monedasService.getCambios(u)
                 redirect(controller:"Usuario", action:"show")      
                 //render(controller:"Usuario",template:'usuario', action:"show")      
                 
@@ -54,20 +55,6 @@ class UsuarioController
         }
     }
     
-    def agregar()
-    {
-        if (session.user)
-        {
-            def pepito=Usuario.findWhere(email:session.user)
-            pepito.addToMonedas(new Moneda(siglas:params.moneda, valorActual:monedasService.getCurrency(params.moneda))).save(flush:true)
-            redirect(controller:"Usuario", action:"show")   
-        }
-        else
-        {
-            //redirect to login?
-        }
-    }
-                
     def show(Usuario usuarioInstance) 
     {                   
         def pepito=Usuario.findWhere(email:session.user)            

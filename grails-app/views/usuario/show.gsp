@@ -17,7 +17,7 @@
     <div class="col-md-6">                    
        <table>
          <tr>
-            <g:form controller="Usuario" action="agregar">
+            <g:form controller="Moneda" action="agregar">
             <td><g:select  optionKey="key" optionValue="key" name="moneda" from="${monedas}"/></td>
             <td></td>
             <td>
@@ -60,10 +60,30 @@
     </div>
     <div class="col-md-6">
       <g:if test="${user?.registros}">
-        <g:each in="${user.registros}" var="r">
-          <g:link controller="registro" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link>          
-        </g:each>
-      </g:if> 
+        <table class="table table-hover">
+          <tr>
+            <th>Siglas</th>
+            <th>Cambio</th>
+            <th>Fecha</th>
+            <th>Acciones</th>            
+          </tr>
+          <g:each in="${user.registros}" var="r">
+            <tr>
+              <td>${r.siglas}</td>
+              <td>${r.cambio}</td>
+              <td>${r.fechaActualizacion}</td>
+              <td>           
+                 <g:link controller="Registro" action="delete" id="${r}"> 
+                   <g:img dir="images" file="delete.png"/>
+                 </g:link>                
+              </td>
+            </tr>
+          </g:each>
+        </table>
+      </g:if>  
+      <g:else>
+        <p>No hay registros!</p>                    
+      </g:else>
     </div>
   </div>  
   <!--
