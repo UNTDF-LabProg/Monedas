@@ -6,14 +6,14 @@
   <g:set var="entityName" value="${message(code: 'usuario.label', default: 'Usuario')}" />	        
 </head>
 <body>        
-  <div class="row">
+  <div style="color: #000" class="row">
     <div class="col-md-12">
       <g:if test="${flash.message}">
         <div class="message" role="status">${flash.message}</div>
       </g:if>
     </div>            
   </div>  
-  <div class="row">
+  <div style="color: #000" class="row">
     <div class="col-md-6">                    
        <table>
          <tr>
@@ -58,7 +58,7 @@
         <p>No hay monedas!</p>                    
       </g:else>     
     </div>
-    <div class="col-md-6">
+    <div style="color: #000" class="col-md-6">
       <g:if test="${user?.registros}">
         <table class="table table-hover">
           <tr>
