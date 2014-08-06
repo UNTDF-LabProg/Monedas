@@ -11,7 +11,6 @@
 .clearfix {
   *zoom: 1;
 }
-
 .clearfix:before,
 .clearfix:after {
   display: table;
@@ -225,7 +224,7 @@ body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 80px;
   color: #FFFFFF;
   background-color: #9E0000;
 }
@@ -4414,7 +4413,7 @@ input[type="submit"].btn.btn-mini {
 .navbar .brand {
   display: block;
   float: left;
-  padding: 10px 20px 10px;
+  padding: 10px 60px 10px;
   margin-left: -20px;
   font-size: 20px;
   font-weight: 200;
@@ -4813,7 +4812,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-inverse .nav > li > a:hover,
 .navbar-inverse .brand:focus,
 .navbar-inverse .nav > li > a:focus {
-  color: #ffffff;
+  color: #9E0000;
 }
 
 .navbar-inverse .brand {
