@@ -73,7 +73,7 @@
 
 
 </div>
-
+<!--
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'registros', 'error')} ">
 	<label for="registros">
 		<g:message code="usuario.registros.label" default="Registros" />
@@ -82,4 +82,4 @@
 	<g:select name="registros" from="${app.Registro.list()}" multiple="multiple" optionKey="cambio" optionValue="siglas" size="5" key ="${usuarioInstance?.registros*.cambio}" value="${usuarioInstance?.registros*.siglas}" class="many-to-many"/>
 
 </div>
-
+-->
