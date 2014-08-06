@@ -32,7 +32,8 @@
               <td>${fieldValue(bean: usuarioInstance, field: "apellido")}</td>					
               <td>${fieldValue(bean: usuarioInstance, field: "password")}</td>					
               <td>${fieldValue(bean: usuarioInstance, field: "dni")}</td>					
-              <td>${fieldValue(bean: usuarioInstance, field: "email")}</td>				
+              <td>${fieldValue(bean: usuarioInstance, field: "email")}</td>
+              <td><g:link action="edit" id="${usuarioInstance.id}">Modificar</g:link></td>
             </tr>
           </g:each>
         </tbody>

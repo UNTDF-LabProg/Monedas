@@ -66,7 +66,7 @@
               <!--<li><a href="${createLink(uri: '/')}"><g:message code="default.home.label" args="[entityName]"/></a></li>-->
               <li><g:link class="list" controller="Usuario" action="index"><g:message code="&nbsp&nbspListar Usuarios" args="[entityName]"/></g:link></li>
               <li><g:link class="create" controller="Usuario" action="create"><g:message code="&nbsp&nbspCrear Usuario" args="[entityName]" /></g:link></li>
-              <li><g:link class="edit" controller="Usuario" action="edit"><g:message code="&nbsp&nbspEditar Usuario" args="[entityName]" /></g:link></li>
+              <!--<li><g:link class="edit" controller="Usuario" action="edit"><g:message code="&nbsp&nbspEditar Usuario" args="[entityName]" /></g:link></li>-->
               <li class="nav-header">+Grupos</li>
               <li><g:link controller="Grupo" action="create"><g:message code="&nbsp&nbspCrear Grupo" /></g:link></li>
               <li><g:link controller="Grupo" action="index"><g:message code="&nbsp&nbspListar Grupo" /></g:link></li>

@@ -1,10 +1,10 @@
 <%@ page import="app.Usuario" %>
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta name="layout" content="administrador">
-  <g:set var="entityName" value="${message(code: 'usuario.label', default: 'Usuario')}" />
-  <title><g:message code="default.edit.label" args="[entityName]" /></title>
+    <g:set var="entityName" value="${message(code: 'usuario.label', default: 'Usuario')}" />
+    <title><g:message code="default.edit.label" args="[entityName]" /></title>
 </head>
 <body>
   <!--<a href="#edit-usuario" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -16,7 +16,7 @@
     </ul>
   </div>-->
   <div id="edit-usuario" class="content scaffold-edit" role="administrador">
-    <h1><g:message code="default.edit.label" args="[entityName]" /></h1>
+    <h1 style="color: #999999"><g:message code="default.edit.label" args="[entityName]" /></h1>
     <g:if test="${flash.message}">
       <div class="message" role="status">${flash.message}</div>
     </g:if>
@@ -29,7 +29,7 @@
     </g:hasErrors>
     <g:form url="[resource:usuarioInstance, action:'update']" method="PUT" >
       <g:hiddenField name="version" value="${usuarioInstance?.version}" />
-      <fieldset class="form">
+      <fieldset style="color: #999999" class="form">
         <g:render template="form"/>
       </fieldset>
       <fieldset class="buttons">
