@@ -6,8 +6,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
-  <head>      
-    <meta charset="utf-8">
+  <head>  
+	<meta charset="utf-8">
     <title>Administrador - System Monedas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -30,12 +30,13 @@
         }
       }
     </style>
-    <!--<link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css" rel="stylesheet">-->
+    <link rel="shortcut icon" href="http://200.61.137.30/pagina_2012/wp-content/themes/Sparc/images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap-responsive.css')}" type="text/css">
     <r:layoutResources />
   </head>
+  
   <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="navbar-inner">
         <div class="container-fluid">
           <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -44,14 +45,14 @@
             <span class="icon-bar"></span>
           </button>
           <a class="brand" href="#"><img src="http://sia1.subirimagenes.net/img/2014/07/08/140708015154648518.png"></a>
-          <a class="brand" href="#">System Monedas</a>          
+          <a class="brand" href="#" style="font-size: 30px">System Monedas Bienvenido Administrador</a>          
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
               Usuario: 
-             <g:link controller="Usuario" action="logout"><g:message code="${session.user} Salir" /></g:link></a> 
+              <a><g:message code="${session.user}"/></a>
+              <a><g:link controller="Usuario" action="logout"><g:message code="Salir"/></g:link></a>  
             </p>
-            
-          </div><!--/.nav-collapse -->
+          </div><!--/.nav-collapse-->
         </div>
       </div>
     </div>
@@ -59,25 +60,27 @@
       <div class="row-fluid">
         <div class="span3">
           <div class="well sidebar-nav">
-            <ul class="nav nav-list">
+            <ul class="nav nav-list" style="background: #FFFFFF">
               <li class="nav-header">Menu</li>
               <li class="nav-header">+Usuarios</li>
               <!--<li><a href="${createLink(uri: '/')}"><g:message code="default.home.label" args="[entityName]"/></a></li>-->
-              <li><g:link class="list" action="index"><g:message code="&nbsp&nbspListar Usuarios" args="[entityName]"/></g:link></li>
-              <li><g:link class="create" action="create"><g:message code="&nbsp&nbspCrear Usuario" args="[entityName]" /></g:link></li>
-              <li><g:link class="edit" action="edit"><g:message code="&nbsp&nbspEditar Usuario" args="[entityName]" /></g:link></li>
+              <li><g:link class="list" controller="Usuario" action="index"><g:message code="&nbsp&nbspListar Usuarios" args="[entityName]"/></g:link></li>
+              <li><g:link class="create" controller="Usuario" action="create"><g:message code="&nbsp&nbspCrear Usuario" args="[entityName]" /></g:link></li>
+              <li><g:link class="edit" controller="Usuario" action="edit"><g:message code="&nbsp&nbspEditar Usuario" args="[entityName]" /></g:link></li>
               <li class="nav-header">+Grupos</li>
-               <li><g:link controller="Grupo" action="create"><g:message code="&nbsp&nbspCrear Grupo" /></g:link></li>
-               <li><g:link controller="Grupo" action="index"><g:message code="&nbsp&nbspListar Grupo" /></g:link></li>
+              <li><g:link controller="Grupo" action="create"><g:message code="&nbsp&nbspCrear Grupo" /></g:link></li>
+              <li><g:link controller="Grupo" action="index"><g:message code="&nbsp&nbspListar Grupo" /></g:link></li>
               
               
               <li class="nav-header">+Monedas</li>
+
+
               <li class="nav-header">+Registros</li>         
             </ul>
-          </div><!--/.well -->
+          </div><!--/.well-->
         </div><!--/span-->
         <div class="span9">
-          <div class="hero-unit">
+          <div class="hero-unit" style="background: #FFFFFF">
             <g:layoutBody/>
           </div>
         </div><!--/span-->

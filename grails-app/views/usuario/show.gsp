@@ -3,35 +3,37 @@
 <html>
   <head>
     <meta name="layout" content="${session.admin?'administrador':'usuario'}"/>
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap.min.css')}" type="text/css">
   <g:set var="entityName" value="${message(code: 'usuario.label', default: 'Usuario')}" />	        
 </head>
 <body>        
-  <div class="row">
+  <div style="color: #000" class="row">
     <div class="col-md-12">
       <g:if test="${flash.message}">
         <div class="message" role="status">${flash.message}</div>
       </g:if>
     </div>            
   </div>  
-  <div class="row">
+  <div style="color: #000" class="row">
     <div class="col-md-6">                    
-       <table>
-         <tr>
-            <g:form controller="Moneda" action="agregar">
-            <td><g:select  optionKey="key" optionValue="key" name="moneda" from="${monedas}"/></td>
-            <td></td>
-            <td>
-                <!-- <g:link controller="Moneda" action="agregarMonedas"> 
-                   <g:img dir="images" file="add.png"/>
-                </g:link> -->
+      <table>
+        <tr>
+        <g:form controller="Moneda" action="agregar">
+          <td><g:select  optionKey="key" optionValue="key" name="moneda" from="${monedas}"/></td>
+          <td></td>
+          <td>
+              <!-- <g:link controller="Moneda" action="agregarMonedas"> 
+<g:img dir="images" file="add.png"/>
+</g:link> -->
             <input type="submit" value="Agregar Moneda">
-            </td>   
-            </g:form>
-         </tr>
-        </table>
-      
-          
-        <g:if test="${user?.monedas}">
+            
+          </td>   
+        </g:form>
+        </tr>
+      </table>
+
+
+      <g:if test="${user?.monedas}">
         <table class="table table-hover">
           <tr>
             <th>Siglas</th>
@@ -44,12 +46,12 @@
               <td>${m.valorActual}</td>
               <td>
                 <!-- <g:link controller="Moneda" action="edit"> 
-                   <g:img dir="images" file="Modify.png"/>
-                 </g:link> -->                
-                 <g:link controller="Moneda" action="delete" id="${m}"> 
-                   <g:img dir="images" file="delete.png"/>
-                 </g:link>                
-              </td>
+<g:img dir="images" file="Modify.png"/>
+</g:link> -->                
+            <g:link controller="Moneda" action="delete" id="${m}"> 
+              <g:img dir="images" file="delete.png"/>
+            </g:link>                
+            </td>
             </tr>
           </g:each>
         </table>
@@ -58,7 +60,7 @@
         <p>No hay monedas!</p>                    
       </g:else>     
     </div>
-    <div class="col-md-6">
+    <div style="color: #000" class="col-md-6">
       <g:if test="${user?.registros}">
         <table class="table table-hover">
           <tr>
@@ -73,10 +75,10 @@
               <td>${r.cambio}</td>
               <td>${r.fechaActualizacion}</td>
               <td>           
-                 <g:link controller="Registro" action="delete" id="${r}"> 
-                   <g:img dir="images" file="delete.png"/>
-                 </g:link>                
-              </td>
+            <g:link controller="Registro" action="delete" id="${r}"> 
+              <g:img dir="images" file="delete.png"/>
+            </g:link>                
+            </td>
             </tr>
           </g:each>
         </table>
