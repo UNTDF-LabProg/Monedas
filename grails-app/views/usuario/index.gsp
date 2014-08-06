@@ -12,11 +12,11 @@
   <body class="centrarCuerpo">            
   
     <div id="list-usuario" class="content scaffold-list" role="administrador">
-      <h1 style="color: #000">Listado de Usuarios </h1>
+      <h1 style="color: #999999">Listado de Usuarios </h1>
       <g:if test="${flash.message}">
         <div class="message" role="status">${flash.message}</div>
       </g:if>                  
-      <table class="table" style="color: #000">
+      <table class="table" style="color: #999999">
         <thead>
           <tr>					
             <g:sortableColumn property="nombre" title="${message(code: 'usuario.nombre.label', default: 'Nombre')}" />

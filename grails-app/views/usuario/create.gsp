@@ -7,7 +7,7 @@
 </head>
 <body>
   <div id="create-usuario" class="content scaffold-create" role="administrador">
-    <h1 style="color: #000"><g:message code="default.create.label" args="[entityName]" /></h1>
+    <h1 style="color: #999999"><g:message code="default.create.label" args="[entityName]" /></h1>
     <g:if test="${flash.message}">
       <div class="message" role="status">${flash.message}</div>
     </g:if>
@@ -19,7 +19,7 @@
       </ul>
     </g:hasErrors>
     <g:form url="[resource:usuarioInstance, action:'save']" >
-      <fieldset class="form" style="color: #000">
+      <fieldset class="form" style="color: #999999">
         <g:render template="form"/>
       </fieldset>
       <fieldset class="buttons">
