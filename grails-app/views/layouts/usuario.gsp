@@ -65,7 +65,7 @@
               <li class="nav-header">Menu</li>
               <li class="nav-header">+Monedas</li>
               <li><g:link controller="Monedas" action="show"><g:message code="&nbsp&nbspListar Monedas" args="[entityName]"/></g:link></li>
-              <li><g:link controller="Monedas" action="create"><g:message code="&nbsp&nbspAgregar Moneda" args="[entityName]" /></g:link></li>  
+              <!--<li><g:link controller="Monedas" action="create"><g:message code="&nbsp&nbspAgregar Moneda" args="[entityName]" /></g:link></li>  -->
               <li class="nav-header">+Registros</li>       
             </ul>
           </div><!--/.well -->
