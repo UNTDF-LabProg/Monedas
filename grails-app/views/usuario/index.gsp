@@ -5,13 +5,12 @@
   <head>
     <meta name="layout" content="administrador">
     <link rel="stylesheet" type="text/css" href="administrador" />
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap.min.css')}" type="text/css">  
     <g:set var="entityName" value="${message(code: 'usuario.label', default: 'Usuario')}" />
     <title><g:message code="default.list.label" args="[entityName]" /></title>                
   </head>
   <body class="centrarCuerpo">            
-  
-    <div id="list-usuario" class="content scaffold-list" role="administrador">
+     <div id="list-usuario" class="content scaffold-list" role="administrador">
       <h1 style="color: #999999">Listado de Usuarios </h1>
       <g:if test="${flash.message}">
         <div class="message" role="status">${flash.message}</div>
