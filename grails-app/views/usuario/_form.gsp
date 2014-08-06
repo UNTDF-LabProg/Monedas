@@ -49,11 +49,8 @@
 
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'grupos', 'error')} ">
 	<label for="grupos">
-		<g:message code="usuario.grupos.label" default="Grupos" />
-		
+		<g:message code="usuario.grupos.label" default="Grupos" />		
 	</label>
-	
-
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'monedas', 'error')} ">
