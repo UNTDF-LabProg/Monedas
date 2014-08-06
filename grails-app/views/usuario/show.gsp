@@ -7,16 +7,16 @@
   <g:set var="entityName" value="${message(code: 'usuario.label', default: 'Usuario')}" />	        
 </head>
 <body>        
-  <div style="color: #000" class="row">
+  <div style="color: #999999" class="row">
     <div class="col-md-12">
       <g:if test="${flash.message}">
         <div class="message" role="status">${flash.message}</div>
       </g:if>
     </div>            
   </div>  
-  <div style="color: #000" class="row">
-    <div class="col-md-6">                    
-      <table>
+  <div style="color: #999999" class="row">
+    <div class="col-md-6" style="color: #999999">                    
+      <table style="color: #999999">
         <tr>
         <g:form controller="Moneda" action="agregar">
           <td><g:select  optionKey="key" optionValue="key" name="moneda" from="${monedas}"/></td>
@@ -26,15 +26,12 @@
 <g:img dir="images" file="add.png"/>
 </g:link> -->
             <input type="submit" value="Agregar Moneda">
-            
           </td>   
         </g:form>
         </tr>
       </table>
-
-
       <g:if test="${user?.monedas}">
-        <table class="table table-hover">
+        <table class="table table-hover" style="color: #999999">
           <tr>
             <th>Siglas</th>
             <th>Cambio</th>
@@ -60,9 +57,9 @@
         <p>No hay monedas!</p>                    
       </g:else>     
     </div>
-    <div style="color: #000" class="col-md-6">
+    <div style="color: #999999" class="col-md-6">
       <g:if test="${user?.registros}">
-        <table class="table table-hover">
+        <table class="table table-hover" style="color: #999999">
           <tr>
             <th>Siglas</th>
             <th>Cambio</th>
