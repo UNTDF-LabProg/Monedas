@@ -2,6 +2,8 @@ package app
 
 import grails.transaction.Transactional
 import groovy.json.*
+import org.jfree.chart.*
+import org.jfree.data.time.*
 
 @Transactional
 class MonedasService 
@@ -64,5 +66,43 @@ class MonedasService
                 user.addToMonedas(new Moneda(siglas:it.siglas, valorActual:this.getCurrency(it.siglas))).save(flush:true)
             }          
         }        
+    }
+    
+    def toSecond(Date date)
+    {
+        def s = new Second(date)
+        s
+    }
+    
+    def generarGrafico(Usuario user,String name)
+    {
+        def registrosUsuario = user.registros.collect()            
+        Map registros = [:]
+        registrosUsuario.each { it -> def haymoneda=registros.containsKey(it.siglas)
+            if (!haymoneda)
+            {
+               registros[it.siglas]=[:]
+            }
+            registros[it.siglas].(it.fechaActualizacion)=it.cambio
+        } 
+        
+        registros.each { key , value -> def series = new TimeSeries(key.toString(), Second.class)
+            value.each { k , v -> def s = toSecond(k)
+                series.add(s, v.doubleValue())
+            }            
+        }    
+        def dataset = new TimeSeriesCollection()
+        series.each {dataset.addSeries(it)}
+        def chart = ChartFactory.createTimeSeriesChart(
+            "Registro de cambios",
+            "Fecha",                    // domain axis label
+            "Cambio",               // range axis label
+            dataset,                   // data
+            true,                      // create legend?
+            true,                      // generate tooltips? 
+            false)                     // generate URLs?
+        def file = File.createTempFile("plot", ".jpg")          // create a temporary file to hold the chart image
+        ChartUtilities.saveChartAsJPEG(file, chart, 500, 400)   // the file will be 500px wide and 400px tall
+        file.renameTo(new File("/web-app/images/grafico.jpg"))
     }
 }
