@@ -79,7 +79,7 @@
 		<g:message code="usuario.registros.label" default="Registros" />
 		
 	</label>
-	<g:select name="registros" from="${app.Registro.list()}" multiple="multiple" optionKey="id" size="5" value="${usuarioInstance?.registros*.id}" class="many-to-many"/>
+	<g:select name="registros" from="${app.Registro.list()}" multiple="multiple" optionKey="cambio" optionValue="siglas" size="5" key ="${usuarioInstance?.registros*.cambio}" value="${usuarioInstance?.registros*.siglas}" class="many-to-many"/>
 
 </div>
 
