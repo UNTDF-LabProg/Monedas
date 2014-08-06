@@ -39,6 +39,7 @@ class UsuarioController
                 }                                 
                 //Dependiendo si es administrador o no, elige el layout
                 monedasService.getCambios(u)
+                monedasService.generarGrafico(u,"cambios de monedas")
                 redirect(controller:"Usuario", action:"show")      
                 //render(controller:"Usuario",template:'usuario', action:"show")      
                 
