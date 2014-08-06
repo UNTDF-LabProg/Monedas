@@ -30,6 +30,7 @@
         }
       }
     </style>
+    <link rel="shortcut icon" href="http://200.61.137.30/pagina_2012/wp-content/themes/Sparc/images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap-responsive.css')}" type="text/css">
     <r:layoutResources />
   </head>
