@@ -62,6 +62,7 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list" style="background: #FFFFFF">
               <li class="nav-header">Menu</li>
+              <li><g:link class="list" controller="Usuario" action="show"><g:message code="&nbsp&nbspInicio" args="[entityName]"/></g:link></li>
               <li class="nav-header">+Usuarios</li>
               <!--<li><a href="${createLink(uri: '/')}"><g:message code="default.home.label" args="[entityName]"/></a></li>-->
               <li><g:link class="list" controller="Usuario" action="index"><g:message code="&nbsp&nbspListar Usuarios" args="[entityName]"/></g:link></li>
